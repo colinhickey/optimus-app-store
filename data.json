@@ -1,0 +1,138 @@
+{
+    "apps": [
+        {
+            "name": "Chuck Norris",
+            "subtitle": "Your home will be safe",
+            "description": "Standing sentry with the included beard accessory, with this Optimus upgrade nobody will dare approach your home uninvited. We didn't train a model to achieve this capability, Chuck visited the factory and gave a knowing nod to a room full of Optimii and they immediately made makeshift beards and started patrolling the factory. Now available to you.",
+            "category": "Security",
+            "rating": 5,
+            "price": "$1000",
+            "accessories": "Beard"
+        },
+        {
+            "name": "Gordon Ramsey",
+            "subtitle": "Michelin starred food at home",
+            "description": "Eat like a king three times a day. Trained on thousands of hours of footage of Gordon from his prolific TV career. Optimus may have picked up a few bad habits and it's recommended to mute Optimus around children as we just never know what the $%&# is going to say.",
+            "category": "Home",
+            "rating": 4.8,
+            "price": "$1.99",
+            "accessories": "Swear Jar"
+        },
+        {
+            "name": "Dog Walker",
+            "subtitle": "Three times a day every day",
+            "description": "Your dog will love it every time Optimus picks up the lead and stalks towards the door. Around the block, to the park and more with this dog walking model trained on thousands of hours of dog walking data captured in the field by SpaceX and Tesla employees gathering data wearing headcams and telemetry chips while walking their own dogs.",
+            "category": "Home",
+            "rating": 4.2,
+            "price": "$5"
+        },
+        {
+            "name": "Mary Poppins",
+            "subtitle": "The ultimate nanny",
+            "description": "Trained on 1000 viewings of the classic movie. Caution, may abscond with your children and a chimney sweep with a dubious British accent.",
+            "category": "Home",
+            "rating": 2.3,
+            "price": "Free"
+        },
+        {
+            "name": "Handyman",
+            "subtitle": "All the skills needed to not do it yourself",
+            "description": "Whip through that honey-do list while you sleep with this handyman model for Optimus.",
+            "category": "Home",
+            "rating": 4.5,
+            "price": "$500",
+            "accessories": "Toolbox not included"
+        },
+        {
+            "name": "Dish Washing",
+            "subtitle": "Clean as a whistle",
+            "description": "Remove that one home task nobody wants to do. Optimus will get things spic and span every night after dinner.",
+            "category": "Home",
+            "rating": 4.9,
+            "price": "$50",
+            "accessories": "Marigolds"
+        },
+        {
+            "name": "Johnny Cab",
+            "subtitle": "Have an old gasoline car and want FSD? Johnny Cab is here!",
+            "description": "Optimus will literally take the driving seat and take you to where you need to go.",
+            "category": "Business",
+            "rating": 3.8,
+            "price": "$100/month"
+        },
+        {
+            "name": "Dog",
+            "subtitle": "Aibo for the modern age",
+            "description": "Want a dog but don't have time? With this model install your Optimus will be your best friend. It'll fetch slippers, bark at the postman and no need for walks or toilet sessions in the rain.",
+            "category": "Home",
+            "rating": 3.2,
+            "price": "Free"
+        },
+        {
+            "name": "Personal Trainer",
+            "subtitle": "Outsource your motivation",
+            "description": "A trainer that turns up every time and makes you do the same. Get fit at home with this advanced personal trainer model. Optimus will become your home gym, offering resistance to your workouts and competing with you on those runs and cycles helping you reach your fitness goals.",
+            "category": "Home",
+            "rating": 4.9,
+            "price": "$100"
+        },
+        {
+            "name": "Ski Instructor",
+            "subtitle": "Sharpen your skills on the piste",
+            "description": "Optimus will accompany you and work with you to improve your skiing based on a model trained on the world's leading skiers and instructors.",
+            "category": "Home",
+            "rating": 4,
+            "price": "$100",
+            "accessories": "Optimus Ski Attachments"
+        },
+        {
+            "name": "Mechanics Assistant",
+            "subtitle": "Pass me the 12 mill",
+            "description": "Frustrated by unreliable apprentices? Ensure you're always handed the right sized socket wrench with this advanced workshop assistant. Rated to lift 450kg, installing engine blocks will be a breeze.",
+            "category": "Business",
+            "rating": 5,
+            "price": "$100"
+        },
+        {
+            "name": "Dental Technician",
+            "subtitle": "Say aaaaah",
+            "description": "Are you a busy dentist who needs a reliable technician to hold things steady while you chomp down on some work? This latest dental technician model is trained on video data from clinics around the world to give you the best service that will put your patients at ease.",
+            "category": "Business",
+            "rating": 4,
+            "price": "$20/hour"
+        },
+        {
+            "name": "Baby Sitter",
+            "subtitle": "Reliable, on time, won't invite friends over",
+            "description": "Optimus makes the ultimate babysitter with this model trained on only the best babysitters, keeping your kids safe, not partying, not trying on your clothes.",
+            "category": "Home",
+            "rating": 5,
+            "price": "$20/hour"
+        },
+        {
+            "name": "Doctor",
+            "subtitle": "A home physician isn't just for Presidents and the Queen",
+            "description": "A fully trained doctor available for your day-to-day domestic ailments.",
+            "category": "Home",
+            "rating": 4.9,
+            "price": "$100/month"
+        },
+        {
+            "name": "Doctor",
+            "subtitle": "ER, Internal, Surgeon, all models available",
+            "description": "Augment or replace your hospital clinical staff with a suite of Optimii with this fully capable medical model ensemble.",
+            "category": "Business",
+            "rating": 4.9,
+            "price": "$50k/month"
+        },
+        {
+            "name": "Archaeologist",
+            "subtitle": "Dig history?",
+            "description": "Trained on 5000 viewings of the Indiana Jones movies this cutting edge archaeology model will have your Optimus finding facts about our history in your backyard in no time.",
+            "category": "Science",
+            "rating": 3.2,
+            "price": "$5",
+            "accessories": "Hat and a whip, Big hole in a garden"
+        }
+    ]
+}
