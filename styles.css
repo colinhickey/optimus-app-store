@@ -1,35 +1,164 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Gabarito', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000;
+    color: #e6e5e5;
+    overscroll-behavior-y: contain;
+    /* Prevent bounce effect */
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    background-color: #111;
+    color: #e6e5e5;
+    /* padding: 5px; */
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Oxanium', sans-serif;
+    letter-spacing: 0.5em;
+    font-weight: 200;
+    height: 60px; /* Explicitly set the height */
+    line-height: 60px; /* Center the text vertically */
+    font-size: 14px;
+}
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #030609;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#robot-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.1s ease;
+    /* Smooth transition */
+    transform-origin: 50% 15%;
+    /* Zoom into the top center of the image */
+}
+
+.zoom-in #robot-image {
+    transform: scale(8);
+}
+
+@keyframes swirl {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
 }
 
 #app-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem;
+    padding-top: 30px;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    background-color: #000;
+    z-index: 5;
+    overscroll-behavior: contain;
 }
 
 .app-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 2px;
     margin: 1rem;
     padding: 1rem;
-    width: 200px;
-    text-align: center;
+    width: 250px;
+    text-align: left;
+    display: grid;
+    grid-template-areas:
+        "title image"
+        "category image"
+        "subtitle subtitle"
+        "price rating";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 0.5rem;
 }
 
 .app-card img {
-    max-width: 100%;
-    border-radius: 5px;
+    grid-area: image;
+    max-width: 90px;
+    border-radius: 2px;
+    justify-self: end;
+}
+
+.app-card h3 {
+    grid-area: title;
+    margin: 0;
+}
+
+.subtitle {
+    grid-area: subtitle;
+    margin: 0 0 3 0;
+}
+
+.category {
+    grid-area: category;
+    margin: 0;
+    padding: 0.05rem 0.35rem;
+    background-color: #444;
+    border-radius: 0.8rem;
+    display: inline-flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    line-height: normal; /* Reset line height */
+    height: 1.5rem; /* Adjust height as needed */
+    text-align: center; /* Center align text */
+    font-size: 0.8rem;
+    justify-self: start;
+    width: auto;
+}
+
+.rating {
+    grid-area: rating;
+    margin: 0;
+    justify-self: end;
+}
+
+.price {
+    grid-area: price;
+    margin: 0;
+}
+
+#scroll-container {
+    height: 200vh; /* Artificial height to enable scrolling */
+    overscroll-behavior: none; /* Prevent bounce effect */
+}
+
+.glowing-animation {
+    position: absolute;
+    border-radius: 50%;
+    background: none;
+    animation: swirl 2s infinite;
+    transform-origin: center;
+    opacity: 0; /* Initially hidden */
 }

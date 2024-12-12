@@ -1,0 +1,19 @@
+#glowing-animation {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 300px; /* Adjusted width */
+    height: 150px; /* Adjusted height */
+    border-radius: 50%;
+    background: none; /* Remove background */
+    animation: swirl 2s infinite;
+    box-shadow: 
+        inset 0 0 20px rgba(255, 0, 255, 0.3), /* Inner shadow with purple color */
+        inset 0 0 40px rgba(0, 0, 255, 0.3), /* Inner shadow with blue color */
+        inset 0 0 60px rgba(255, 0, 0, 0.3), /* Inner shadow with red color */
+        0 0 20px rgba(255, 0, 255, 0.3), /* Outer shadow with purple color */
+        0 0 40px rgba(0, 0, 255, 0.3), /* Outer shadow with blue color */
+        0 0 60px rgba(255, 0, 0, 0.3); /* Outer shadow with red color */
+    transform-origin: center;
+    opacity: 0; /* Initially hidden */
+}
