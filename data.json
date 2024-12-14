@@ -2,61 +2,67 @@
     "apps": [
         {
             "name": "Chuck Norris",
-            "subtitle": "Your home will be safe",
-            "description": "Standing sentry with the included beard accessory, with this Optimus upgrade nobody will dare approach your home uninvited. We didn't train a model to achieve this capability, Chuck visited the factory and gave a knowing nod to a room full of Optimii and they immediately made makeshift beards and started patrolling the factory. Now available to you.",
+            "subtitle": "The ultimate in home safety",
+            "description": "With this Optimus upgrade nobody will dare approach your home uninvited. We didn't train a model to achieve this capability, Chuck visited the factory and gave a knowing nod to a room full of Optimii and they immediately made makeshift beards and started patrolling the factory. Now available to you.",
             "category": "Home",
             "rating": 5,
             "price": "$1000",
             "accessories": "Beard",
-            "image": "chuck-norris.jpeg"
+            "image": "chuck-norris.jpeg",
+            "neuralink": false
         },
         {
-            "name": "Gordon Ramsey",
-            "subtitle": "Michelin starred food at home",
+            "name": "Gordon Ramsey™",
+            "subtitle": "Michelin starred food for every meal",
             "description": "Eat like a king three times a day. Trained on thousands of hours of footage of Gordon from his prolific TV career. Optimus may have picked up a few bad habits and it's recommended to mute Optimus around children as we just never know what the $%&# is going to say.",
             "category": "Home",
             "rating": 4.8,
             "price": "$1.99",
             "accessories": "Swear Jar",
-            "image": "gordon-ramsey.jpeg"
+            "image": "gordon-ramsey.jpeg",
+            "neuralink": true
         },
         {
             "name": "Dog Walker",
-            "subtitle": "Three times a day every day",
+            "subtitle": "Three times a day, every day",
             "description": "Your dog will love it every time Optimus picks up the lead and stalks towards the door. Around the block, to the park and more with this dog walking model trained on thousands of hours of dog walking data captured in the field by SpaceX and Tesla employees gathering data wearing headcams and telemetry chips while walking their own dogs.",
             "category": "Home",
             "rating": 4.2,
             "price": "$5",
-            "image": "dog-walker.jpeg"
+            "image": "dog-walker.jpeg",
+            "neuralink": false
         },
         {
-            "name": "Mary Poppins",
+            "name": "Mary Poppins™",
             "subtitle": "The ultimate nanny",
             "description": "Trained on 1000 viewings of the classic movie. Caution, may abscond with your children and a chimney sweep with a dubious British accent.",
             "category": "Home",
-            "rating": 2.3,
+            "rating": 3.3,
             "price": "Free",
-            "image": "mary-poppins.jpeg"
+            "image": "mary-poppins.jpeg",
+            "neuralink": false
         },
         {
             "name": "Handyman",
-            "subtitle": "All the skills needed to not do it yourself",
+            "subtitle": "All the skills needed to not Do-It-Yourself",
             "description": "Whip through that honey-do list while you sleep with this handyman model for Optimus.",
             "category": "Home",
             "rating": 4.5,
             "price": "$500",
             "accessories": "Toolbox not included",
-            "image": "handyman.jpeg"
+            "image": "handyman.jpeg",
+            "neuralink": true
         },
         {
             "name": "Dish Washing",
-            "subtitle": "Clean as a whistle",
+            "subtitle": "Making your home sparkle",
             "description": "Remove that one home task nobody wants to do. Optimus will get things spic and span every night after dinner.",
             "category": "Home",
             "rating": 4.9,
             "price": "$50",
             "accessories": "Marigolds",
-            "image": "washing-up.jpeg"
+            "image": "washing-up.jpeg",
+            "neuralink": false
         },
         {
             "name": "Johnny Cab",
@@ -65,7 +71,9 @@
             "category": "Home",
             "rating": 3.8,
             "price": "$100/month",
-            "image": "johnny-cab.jpeg"
+            "image": "johnny-cab.jpg",
+            "accessories": "Johnny's suit, mask and hat",
+            "neuralink": false
         },
         {
             "name": "Dog",
@@ -74,7 +82,8 @@
             "category": "Home",
             "rating": 3.2,
             "price": "Free",
-            "image": "dog.png"
+            "image": "dog.png",
+            "neuralink": true
         },
         {
             "name": "Personal Trainer",
@@ -83,7 +92,8 @@
             "category": "Home",
             "rating": 4.9,
             "price": "$100",
-            "image": "personal-trainer.jpeg"
+            "image": "personal-trainer.jpeg",
+            "neuralink": false
         },
         {
             "name": "Ski Instructor",
@@ -93,25 +103,28 @@
             "rating": 4,
             "price": "$100",
             "accessories": "Optimus Ski Attachments",
-            "image": "ski-instructor.jpeg"
+            "image": "ski-instructor.jpeg",
+            "neuralink": false
         },
         {
             "name": "Mechanics Assistant",
-            "subtitle": "Pass me the 12 mill",
+            "subtitle": "The reliable assistant you've always wanted",
             "description": "Frustrated by unreliable apprentices? Ensure you're always handed the right sized socket wrench with this advanced workshop assistant. Rated to lift 450kg, installing engine blocks will be a breeze.",
             "category": "Home",
             "rating": 5,
             "price": "$100",
-            "image": "mechanics-assistant.jpeg"
+            "image": "mechanics-assistant.jpeg",
+            "neuralink": true
         },
         {
             "name": "Dental Technician",
-            "subtitle": "Say aaaaah",
+            "subtitle": "An optimus a day keeps the dentist away",
             "description": "Are you a busy dentist who needs a reliable technician to hold things steady while you chomp down on some work? This latest dental technician model is trained on video data from clinics around the world to give you the best service that will put your patients at ease.",
             "category": "Business",
             "rating": 4,
             "price": "$20/hour",
-            "image": "dental-assistant.jpeg"
+            "image": "dental-assistant.jpeg",
+            "neuralink": true
         },
         {
             "name": "Baby Sitter",
@@ -120,7 +133,8 @@
             "category": "Home",
             "rating": 5,
             "price": "$20/hour",
-            "image": "baby-sitter.jpeg"
+            "image": "baby-sitter.jpeg",
+            "neuralink": false
         },
         {
             "name": "Doctor - Personal",
@@ -129,7 +143,8 @@
             "category": "Health",
             "rating": 4.9,
             "price": "$100/month",
-            "image": "doctor-personal.jpeg"
+            "image": "doctor-personal.jpeg",
+            "neuralink": true
         },
         {
             "name": "Doctor - Pro",
@@ -138,7 +153,8 @@
             "category": "Business",
             "rating": 4.9,
             "price": "$50k/month",
-            "image": "doctor-pro.jpeg"
+            "image": "doctor-pro.jpeg",
+            "neuralink": false
         },
         {
             "name": "Archaeologist",
@@ -148,7 +164,8 @@
             "rating": 3.2,
             "price": "$5",
             "accessories": "Hat and a whip, Big hole in a garden",
-            "image": "archaeologist.jpeg"
+            "image": "archaeologist.jpeg",
+            "neuralink": true
         }
     ]
 }

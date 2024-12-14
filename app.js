@@ -4,6 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const appList = document.getElementById("app-list");
   const robotImage = document.getElementById("robot-image");
   const scrollContainer = document.getElementById("scroll-container");
+  const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modal-content');
+const closeModal = document.getElementById('close-modal');
+const modalImage = document.getElementById('modal-image');
+const modalName = document.getElementById('modal-name');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalDescription = document.getElementById('modal-description');
+const modalCategory = document.getElementById('modal-category');
+const modalRating = document.getElementById('modal-rating');
+const modalPrice = document.getElementById('modal-price');
+const modalAccessories = document.getElementById('modal-accessories');
   let animationComplete = false;
 
   function createGlowingAnimation(top, left) {
@@ -78,6 +89,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function openModal(app) {
+    modalImage.src = `images/${app.image}`;
+    modalName.textContent = app.name;
+    modalSubtitle.textContent = app.subtitle;
+    modalDescription.textContent = app.description;
+    modalCategory.innerHTML = `${app.category}`;
+    modalRating.textContent = `${app.rating} ⭐`;
+    modalPrice.textContent = `${app.price}`;
+    modalAccessories.textContent = `Accessories: ${app?.accessories ?? 'None'}`;
+    const appNeuralink = document.createElement("button");
+    appNeuralink.id = "neuralink-button";
+    appNeuralink.textContent = "Send to Neuralink";
+    app.neuralink ? modalContent.appendChild(appNeuralink) : '';
+    modal.classList.remove('hidden');
+}
+
   window.addEventListener("scroll", updateAnimationProgress);
 
   fetch("data.json")
@@ -94,8 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="category">${app.category}</p>      
                     <p class="rating">${app.rating} ⭐</p>
                 `;
+        appCard.addEventListener('click', () => {
+            openModal(app)
+        });
         appList.appendChild(appCard);
       });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
     });
 
   // Create multiple glowing animations

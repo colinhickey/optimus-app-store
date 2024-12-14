@@ -22,3 +22,5 @@ navigate to one app, to see:
 disclaimer, made for fun in footer
 
 redo some of the images with the microsoft prompt improver, it worked well!
+
+add neuralink icon if its compatible, and only show send button on those pages

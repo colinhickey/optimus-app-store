@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div id="scroll-container">
         <header id="header" class="hidden">
@@ -23,6 +27,24 @@
             <!-- App list will be populated here -->
         </main>
     </div>
+    <!-- <div id="modal" class="hidden">
+
+    </div> -->
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <span id="close-modal">&times;</span>
+            <h3 id="modal-name"></h3>
+            <p id="modal-subtitle"></p>
+            <div id="modal-category" class="category"></div>
+            <p id="modal-rating"></p>
+            <p id="modal-price"></p>
+            <p id="modal-description"></p>
+            <p id="modal-accessories"></p>
+            <img id="modal-image" src="" alt="app image">
+            <button id="optimus-button">Send to Optimus</button>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
+
 </html>

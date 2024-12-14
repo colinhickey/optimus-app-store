@@ -11,7 +11,6 @@ body {
 header {
     background-color: #111;
     color: #e6e5e5;
-    /* padding: 5px; */
     text-align: center;
     position: sticky;
     top: 0;
@@ -19,8 +18,10 @@ header {
     font-family: 'Oxanium', sans-serif;
     letter-spacing: 0.5em;
     font-weight: 200;
-    height: 60px; /* Explicitly set the height */
-    line-height: 60px; /* Center the text vertically */
+    height: 60px;
+    /* Explicitly set the height */
+    line-height: 60px;
+    /* Center the text vertically */
     font-size: 14px;
 }
 
@@ -66,7 +67,7 @@ header {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 #app-list {
@@ -86,8 +87,8 @@ header {
 }
 
 .app-card {
-    background-color: #222;
-    border: 1px solid #333;
+    background-color: #141414;
+    border: 1px solid #222;
     border-radius: 2px;
     margin: 1rem;
     padding: 1rem;
@@ -102,6 +103,7 @@ header {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto 1fr auto;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 .app-card img {
@@ -109,6 +111,7 @@ header {
     max-width: 90px;
     border-radius: 2px;
     justify-self: end;
+
 }
 
 .app-card h3 {
@@ -119,22 +122,24 @@ header {
 .subtitle {
     grid-area: subtitle;
     margin: 0 0 3 0;
+    font-weight: 400;
 }
 
 .category {
     grid-area: category;
     margin: 0;
     padding: 0.05rem 0.35rem;
-    background-color: #444;
+    background-color: #146388;
     border-radius: 0.8rem;
-    display: inline-flex; /* Use flexbox for vertical centering */
+    display: inline-flex; /* Use flexbox for vertical centering */ 
     align-items: center; /* Vertically center the text */
     justify-content: center; /* Horizontally center the text */
     line-height: normal; /* Reset line height */
     height: 1.5rem; /* Adjust height as needed */
     text-align: center; /* Center align text */
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     justify-self: start;
+    align-self: start; /* Align to the top */
     width: auto;
 }
 
@@ -147,6 +152,165 @@ header {
 .price {
     grid-area: price;
     margin: 0;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: normal;
+    height: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    justify-self: start;
+    width: 80px;
+    background-color: #333;
+}
+
+/* Modal styles */
+#modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+}
+
+#modal-content {
+    background-color: #222;
+    padding: 2rem 0 1.5rem 2rem;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        "modal-name modal-name modal-image modal-image"
+        "modal-subtitle modal-subtitle modal-image modal-image"
+        "modal-accessories modal-category modal-image modal-image"
+        "modal-description modal-description modal-image modal-image"
+        "modal-price modal-rating modal-image modal-image"
+        "optimus-button neuralink-button modal-image modal-image";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 0;
+    align-items: start;
+}
+
+#close-modal {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #444;
+    border-radius: 50%;
+    padding: 3px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#modal-image {
+    grid-area: modal-image;
+    max-width: 100%;
+    margin: -2rem -2rem -2rem 0;
+    border-radius: 0 10px 10px 0;
+}
+
+#modal-name {
+    grid-area: modal-name;
+    margin: 0 0 5px 0;
+    font-size: 2rem;
+}
+
+#modal-subtitle {
+    grid-area: modal-subtitle;
+    align-self: start;
+    margin: 0 2rem 10px 0;
+    font-weight: 600;
+}
+
+#modal-category {
+    grid-area: modal-category;
+    font-size: 0.9rem;
+    margin: 0 2rem 10px 0;
+    justify-self: end;
+    align-self: center;
+}
+
+#modal-accessories {
+    grid-area: modal-accessories;
+    margin: 0 0 10px 0;
+    align-self: center;
+}
+
+#modal-description {
+    grid-area: modal-description;
+    text-align: justify;
+    margin: 0 2rem 10px 0;
+}
+
+#modal-price {
+    grid-area: modal-price;
+    margin: 0 0 10px 0;
+}
+
+#modal-rating {
+    grid-area: modal-rating;
+    margin: 0 2rem 10px 0;
+    justify-self: end;
+}
+
+#optimus-button {
+    grid-area: optimus-button;
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217 51%, #e52d27 100%);
+    margin: 4px 2rem 4px 4px;
+    padding: 10px 20px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #e6e5e5;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 0;
+    display: block;
+    cursor: pointer;
+    align-self: end;
+}
+
+#optimus-button:hover {
+    background-position: right center;
+}
+
+#neuralink-button {
+    grid-area: neuralink-button;
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE 51%, #DA22FF 100%);
+    margin: 4px 2rem 4px 4px;
+    padding: 10px 20px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #e6e5e5;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 0;
+    display: block;
+    cursor: pointer;
+    align-self: end;
+}
+
+#neuralink-button:hover {
+    background-position: right center;
 }
 
 #scroll-container {
