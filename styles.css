@@ -75,6 +75,20 @@ header {
     display: none !important;
 }
 
+#scroll-container {
+    height: 200vh; /* Artificial height to enable scrolling */
+    overscroll-behavior: none; /* Prevent bounce effect */
+}
+
+.glowing-animation {
+    position: absolute;
+    border-radius: 50%;
+    background: none;
+    animation: swirl-clockwise 2s infinite;
+    transform-origin: center;
+    opacity: 0; /* Initially hidden */
+}
+
 #app-list {
     display: flex;
     flex-wrap: wrap;
@@ -318,16 +332,105 @@ header {
     background-position: right center;
 }
 
-#scroll-container {
-    height: 200vh; /* Artificial height to enable scrolling */
-    overscroll-behavior: none; /* Prevent bounce effect */
-}
+@media (max-width: 768px) {
 
-.glowing-animation {
-    position: absolute;
-    border-radius: 50%;
-    background: none;
-    animation: swirl-clockwise 2s infinite;
-    transform-origin: center;
-    opacity: 0; /* Initially hidden */
+    h1 {
+        font-size: 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        letter-spacing: 0em;
+    }
+    /* Adjust app card margins for mobile */
+    .app-card {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        width: calc(100% - 1rem); /* Adjust width to fit within the container */
+        grid-template-areas:
+        "title title image"
+        "category category image"
+        "subtitle subtitle image"
+        "price rating image";
+        grid-template-columns: auto auto 40%;
+        grid-template-rows: auto auto auto auto;
+        gap: 0.1rem;
+    }
+
+    .app-card img {
+        max-width: 100%;
+        margin: -0.5rem -0.5rem -0.5rem 1rem;
+        border-radius: 0 2px 2px 0;
+    }
+
+    /* Adjust modal layout for mobile */
+    #modal-content {
+        width: 100%; /* Take the full width on mobile */
+        height: 100%; /* Take the full height on mobile */
+        max-width: none; /* Remove max-width constraint */
+        padding: 0; /* Adjust padding for mobile */
+        grid-template-areas:
+            "modal-image modal-image"
+            "modal-name modal-name" 
+            "modal-subtitle modal-subtitle"
+            "modal-description modal-description"
+            "modal-accessories modal-category"
+            "modal-price modal-rating"
+            "optimus-button optimus-button"
+            "neuralink-button neuralink-button";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        overflow-y: auto; /* Enable vertical scrolling */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none; 
+        border-radius: 0;
+    }
+
+    #close-modal {
+        display: none;
+    }
+
+    #modal-image {
+        margin: 0; /* Remove margin for mobile */
+        border-radius: 0; /* Remove border radius for mobile */
+        height: 100%; /* Take the full width on mobile */
+        align-self: center;
+    }
+
+    #modal-name{
+        margin: 0.5rem 1rem 0.5rem 1rem;
+        font-size: 1.5rem;      
+    }
+    #modal-subtitle{
+        margin: 0 1rem 1rem 1rem;
+    }
+
+    #modal-description{
+        margin: 0 1rem 1rem 1rem;
+    }
+    
+    #modal-accessories{
+        margin: 0 1rem 1rem 1rem;
+    }
+
+    #modal-category{
+        margin: 0 1rem 1rem 1rem;
+        align-self: flex-end;
+    }
+    
+    #modal-rating{
+        margin: 0 1rem 1rem 1rem;
+        align-self: flex-end;
+    
+    }
+    
+    #modal-price{
+        margin: 0 1rem 1rem 1rem;
+    }
+
+    #optimus-button{
+        margin: 0 1rem 1rem 1rem;
+    }
+    
+    #neuralink-button{
+        margin: 0 1rem 1rem 1rem;
+    }
 }
