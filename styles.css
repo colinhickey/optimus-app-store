@@ -37,8 +37,8 @@ header {
 }
 
 #robot-image {
-    max-width: 100%;
-    height: auto;
+    height: 100vh;
+    width: auto;
     transition: transform 0.1s ease; /* Smooth transition */
     transform-origin: 50% 15%; /* Zoom into the top center of the image */
 }
