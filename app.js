@@ -48,6 +48,10 @@ const modalAccessories = document.getElementById('modal-accessories');
             0 0 30px ${color3}
         `;
 
+    // Randomly assign clockwise or counterclockwise animation
+    const animationType = Math.random() > 0.5 ? 'swirl-clockwise' : 'swirl-counterclockwise';
+    glowingAnimation.style.animationName = animationType;    
+
     welcomeSection.appendChild(glowingAnimation);
   }
 
@@ -58,6 +62,17 @@ const modalAccessories = document.getElementById('modal-accessories');
       createGlowingAnimation(top, left);
     }
   }
+
+  function startAnimation() {
+    if (!animationComplete) {
+        animationComplete = true;
+        welcomeSection.remove(); // Remove the welcome-section from the DOM
+        appList.classList.remove('hidden');
+        header.classList.remove('hidden');
+        scrollContainer.style.height = '100vh'; // Adjust the height of the scroll-container
+        window.scrollTo(0, 0); // Scroll back to the top
+    }
+}
 
   function updateAnimationProgress() {
     const scrollTop = window.scrollY;
@@ -76,12 +91,13 @@ const modalAccessories = document.getElementById('modal-accessories');
 
     // Show or hide elements based on scroll progress
     if (scrollFraction >= 1 && !animationComplete) {
-      animationComplete = true;
-      welcomeSection.remove(); // Remove the welcome-section from the DOM
-      appList.classList.remove("hidden");
-      header.classList.remove("hidden");
-      scrollContainer.style.height = "100vh"; // Adjust the height of the scroll-container
-      window.scrollTo(0, 0); // Scroll back to the top
+      startAnimation();
+      // animationComplete = true;
+      // welcomeSection.remove(); // Remove the welcome-section from the DOM
+      // appList.classList.remove("hidden");
+      // header.classList.remove("hidden");
+      // scrollContainer.style.height = "100vh"; // Adjust the height of the scroll-container
+      // window.scrollTo(0, 0); // Scroll back to the top
     } else if (!animationComplete) {
       welcomeSection.style.display = "flex";
       appList.classList.add("hidden");
@@ -106,6 +122,7 @@ const modalAccessories = document.getElementById('modal-accessories');
 }
 
   window.addEventListener("scroll", updateAnimationProgress);
+  welcomeSection.addEventListener('click', startAnimation);
 
   fetch("data.json")
     .then((response) => response.json())
@@ -121,9 +138,7 @@ const modalAccessories = document.getElementById('modal-accessories');
                     <p class="category">${app.category}</p>      
                     <p class="rating">${app.rating} ⭐</p>
                 `;
-        appCard.addEventListener('click', () => {
-            openModal(app)
-        });
+        appCard.addEventListener('click', () => {openModal(app)});
         appList.appendChild(appCard);
       });
     });

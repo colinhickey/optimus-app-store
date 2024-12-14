@@ -7,20 +7,15 @@ Some apps also available for Neuralink
 To do list:
 add filters to the page
 
-layour the card content nicely
-
 style the page so its less boring, nice glows, sharper layout
-
-navigate to one app, to see:
-- description
-- larger image
-- accessories
-- buy button
-- send to optimus
-- send to neuralink
 
 disclaimer, made for fun in footer
 
 redo some of the images with the microsoft prompt improver, it worked well!
 
-add neuralink icon if its compatible, and only show send button on those pages
+confetti when click send to optimus
+
+pagetakeover with hypnosis animation when sent to neuralink.
+(that will be fun, I want to work on it now!)
+
+testing, people don't scroll. make scroll down arrow or support clicks to animate.

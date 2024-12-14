@@ -4,8 +4,7 @@ body {
     padding: 0;
     background-color: #000;
     color: #e6e5e5;
-    overscroll-behavior-y: contain;
-    /* Prevent bounce effect */
+    overscroll-behavior-y: contain; /* Prevent bounce effect */
 }
 
 header {
@@ -18,10 +17,8 @@ header {
     font-family: 'Oxanium', sans-serif;
     letter-spacing: 0.5em;
     font-weight: 200;
-    height: 60px;
-    /* Explicitly set the height */
-    line-height: 60px;
-    /* Center the text vertically */
+    height: 60px; /* Explicitly set the height */
+    line-height: 60px; /* Center the text vertically */
     font-size: 14px;
 }
 
@@ -42,27 +39,35 @@ header {
 #robot-image {
     max-width: 100%;
     height: auto;
-    transition: transform 0.1s ease;
-    /* Smooth transition */
-    transform-origin: 50% 15%;
-    /* Zoom into the top center of the image */
+    transition: transform 0.1s ease; /* Smooth transition */
+    transform-origin: 50% 15%; /* Zoom into the top center of the image */
 }
 
 .zoom-in #robot-image {
     transform: scale(8);
 }
 
-@keyframes swirl {
+@keyframes swirl-clockwise {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
     }
-
     50% {
         transform: translate(-50%, -50%) rotate(180deg);
     }
-
     100% {
         transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes swirl-counterclockwise {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
     }
 }
 
@@ -322,7 +327,7 @@ header {
     position: absolute;
     border-radius: 50%;
     background: none;
-    animation: swirl 2s infinite;
+    animation: swirl-clockwise 2s infinite;
     transform-origin: center;
     opacity: 0; /* Initially hidden */
 }
