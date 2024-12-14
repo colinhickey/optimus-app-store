@@ -107,7 +107,7 @@
             "neuralink": false
         },
         {
-            "name": "Mechanics Assistant",
+            "name": "Mechanic's Assistant",
             "subtitle": "The reliable assistant you've always wanted",
             "description": "Frustrated by unreliable apprentices? Ensure you're always handed the right sized socket wrench with this advanced workshop assistant. Rated to lift 450kg, installing engine blocks will be a breeze.",
             "category": "Home",
@@ -163,7 +163,7 @@
             "category": "Science",
             "rating": 3.2,
             "price": "$5",
-            "accessories": "Hat and a whip, Big hole in a garden",
+            "accessories": "Hat, whip, shovel",
             "image": "archaeologist.jpeg",
             "neuralink": true
         }
