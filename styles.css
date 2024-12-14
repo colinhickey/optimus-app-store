@@ -422,10 +422,12 @@ h1 {
     }
 
     #modal-image {
-        margin: 0; /* Remove margin for mobile */
-        border-radius: 0; /* Remove border radius for mobile */
-        max-height: 100%; /* Take the full width on mobile */
+        margin: 0; 
+        border-radius: 0; 
+        height: 100%; 
         align-self: center;
+        height: auto; 
+        object-fit: cover;
     }
 
     #modal-name{
