@@ -375,14 +375,10 @@ h1 {
         gap: 0.1rem;
     }
 
-    /* 
-    top margin of mobile list
-    push price and rating to bottom */
-
     .subtitle {
-        overflow: hidden; /* Hide the overflow text */
-        white-space: nowrap; /* Prevent text from wrapping to the next line */
-        text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+        overflow: hidden; 
+        white-space: nowrap; 
+        text-overflow: ellipsis; 
     }
     
 
@@ -428,7 +424,7 @@ h1 {
     #modal-image {
         margin: 0; /* Remove margin for mobile */
         border-radius: 0; /* Remove border radius for mobile */
-        height: 100%; /* Take the full width on mobile */
+        max-height: 100%; /* Take the full width on mobile */
         align-self: center;
     }
 
