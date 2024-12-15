@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalRating = document.getElementById('modal-rating');
   const modalPrice = document.getElementById('modal-price');
   const modalAccessories = document.getElementById('modal-accessories');
+  const neuralinkOverlay = document.getElementById('neuralink-overlay');
+  const neuralinkAnimation = document.getElementById('neuralink-animation');   
+  const installMessage = document.getElementById('neuralink-install-message');
   let animationComplete = false;
 
   function createGlowingAnimation(top, left) {
@@ -109,11 +112,35 @@ document.addEventListener("DOMContentLoaded", () => {
     modalRating.textContent = `${app.rating} ⭐`;
     modalPrice.textContent = `${app.price}`;
     modalAccessories.textContent = `Accessories: ${app?.accessories ?? 'None'}`;
+    if(app.neuralink) {
     const appNeuralink = document.createElement("button");
     appNeuralink.id = "neuralink-button";
     appNeuralink.textContent = "Send to Neuralink";
     app.neuralink ? modalContent.appendChild(appNeuralink) : '';
+    appNeuralink.addEventListener('click', startNeuralinkAnimation);
+    }
     modal.classList.remove('hidden');
+}
+
+function startNeuralinkAnimation() {
+  neuralinkOverlay.classList.remove('hidden');
+  neuralinkOverlay.classList.add('show');
+
+  // Create glowing circles
+  for (let i = 0; i < 5; i++) {
+      const circle = document.createElement('div');
+      circle.className = 'glowing-circle';
+      circle.style.animationDelay = `${i * 0.5}s`;
+      neuralinkAnimation.appendChild(circle);
+  }
+
+      // Hide the overlay and remove the glowing circles after 5 seconds
+      setTimeout(() => {
+        neuralinkOverlay.classList.remove('show');
+        neuralinkOverlay.classList.add('hidden');
+        neuralinkAnimation.innerHTML = '';
+        installMessage.classList.add('hidden');
+    }, 4000);
 }
 
   window.addEventListener("scroll", updateAnimationProgress);
@@ -141,12 +168,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    closeModal.addEventListener('click', () => {
-        modal.classList.add('hidden');
-    });
-
-    closeModalMobile.addEventListener('click', () => {
+  closeModal.addEventListener('click', () => {
       modal.classList.add('hidden');
+  });
+
+  closeModalMobile.addEventListener('click', () => {
+    modal.classList.add('hidden');
   });
 
   // Create multiple glowing animations
