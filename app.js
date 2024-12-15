@@ -121,6 +121,19 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.remove('hidden');
 }
 
+function fireConfetti(event) {
+  const x = event.clientX / window.innerWidth;
+  const y = event.clientY / window.innerHeight;
+
+  confetti({
+      particleCount: 100,
+      startVelocity: 30,
+      spread: 360,
+      origin: { x, y },
+      zIndex: 20000
+  });
+}
+
 function startNeuralinkAnimation() {
   neuralinkOverlay.classList.remove('hidden');
   neuralinkOverlay.classList.add('show');
@@ -169,6 +182,8 @@ function startNeuralinkAnimation() {
         appList.appendChild(appCard);
       });
     });
+
+  modalOptimusButton.addEventListener('click', fireConfetti);
 
   modalNeuralinkButton.addEventListener('click', startNeuralinkAnimation);
 
