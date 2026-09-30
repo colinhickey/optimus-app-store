@@ -3,36 +3,129 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
     <title>Optimus App Store</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Download new skills straight into your Optimus, or your own brain. A parody app store for the humanoid robot age.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/homepage.jpg">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div id="scroll-container">
-        <header id="header" class="hidden">
-            <h1>Optimus App Store</h1>
-        </header>
-        <div id="welcome-section">
-            <img src="images/homepage.jpg" alt="Optimus Robot" id="robot-image">
-            <div id="glowing-animation"></div>
+    <canvas id="brain" aria-hidden="true"></canvas>
+
+    <header id="header">
+        <a href="#top" id="logo" aria-label="Optimus App Store, replay intro">
+            <span class="logo-main">Optimus</span><span class="logo-sub">App Store</span>
+        </a>
+    </header>
+
+    <section id="intro" aria-label="Intro: scroll to travel into Optimus's mind">
+        <div class="intro-stage">
+            <div id="hero"><img id="hero-image" src="images/homepage.jpg" alt="The Optimus humanoid robot standing in darkness"></div>
+            <div id="visor-glint" aria-hidden="true"></div>
+            <div id="hud" aria-hidden="true">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                <span class="readout left">NEURAL CORE<b>ONLINE</b></span>
+                <span class="readout left second">SKILL SLOTS<b id="hud-slots">--</b></span>
+                <span class="readout right">TARGET<b>VISOR</b></span>
+                <span class="readout right second">LATENCY<b>0.4 ms</b></span>
+            </div>
+            <div id="iris" aria-hidden="true"></div>
+            <div id="flash" aria-hidden="true"></div>
+            <div id="scrim" aria-hidden="true"></div>
+
+            <div id="intro-title">
+                <p class="eyebrow">Neural skill marketplace</p>
+                <h1>Optimus<span>App Store</span></h1>
+                <p class="tagline">Skills are just software now.</p>
+            </div>
+
+            <pre id="boot" aria-hidden="true"></pre>
+
+            <div id="link-meter" aria-hidden="true">
+                <span class="meter-label"><span class="meter-name">Neural link</span><b id="meter-status">Standby</b></span>
+                <span class="meter-bar"><i id="meter-fill"></i></span>
+                <span class="meter-value" id="meter-value">0%</span>
+            </div>
+
+            <button id="scroll-cue" type="button">
+                <span class="cue-icon" aria-hidden="true"><i></i></span>
+                <span class="cue-text"><span class="cue-pointer">Scroll</span><span class="cue-touch">Swipe up</span> into its mind</span>
+                <span class="cue-sub">or tap to play</span>
+            </button>
+            <button id="skip-intro" type="button">Skip intro</button>
         </div>
-        <main id="app-list" class="hidden">
-            <!-- App list will be populated here -->
-        </main>
-        <div id="footer">
-            <span>Made with 🫀 by <a href="https://colinhickey.ltd">Colin</a></span>
+    </section>
+
+    <main id="store">
+        <div class="store-heading">
+            <p class="eyebrow">Now available</p>
+            <h2>Download a skill.<br>Or two.</h2>
+            <p>New abilities for your Optimus, installed over the air. Some of them install straight into you.</p>
         </div>
-    </div>
+
+        <section class="today wrap" aria-labelledby="today-title">
+            <div class="section-head">
+                <div>
+                    <p class="section-date" id="today-date"></p>
+                    <h2 id="today-title">Today</h2>
+                </div>
+                <div class="nav-buttons">
+                    <button type="button" class="nav-button" id="today-prev" aria-label="Previous featured skill">‹</button>
+                    <button type="button" class="nav-button" id="today-next" aria-label="Next featured skill">›</button>
+                </div>
+            </div>
+            <div class="today-track" id="today-track"></div>
+            <div class="today-dots" id="today-dots"></div>
+        </section>
+
+        <div id="toolbar-anchor"></div>
+        <div class="toolbar" id="toolbar">
+            <div class="toolbar-inner wrap">
+                <label class="search">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                    <input type="search" id="search" placeholder="Search skills" aria-label="Search skills" autocomplete="off">
+                </label>
+                <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+                <label class="sort">
+                    <span class="visually-hidden">Sort by</span>
+                    <select id="sort">
+                        <option value="featured">Featured</option>
+                        <option value="rating">Top rated</option>
+                        <option value="price-asc">Price: low to high</option>
+                        <option value="price-desc">Price: high to low</option>
+                        <option value="name">A–Z</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div id="shelves"></div>
+
+        <section id="results" class="wrap" hidden aria-live="polite">
+            <div class="section-head">
+                <div>
+                    <h2 id="results-title">Results</h2>
+                    <p id="results-count"></p>
+                </div>
+                <button type="button" class="text-button" id="clear-filters">Clear filters</button>
+            </div>
+            <div class="grid" id="results-grid"></div>
+            <p class="empty" id="results-empty" hidden>No skills match that yet. Our engineers are training a model for it as we speak.</p>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <span>Made with 🫀 by <a href="https://colinhickey.ltd">Colin</a></span>
+    </footer>
+
     <div id="modal" class="hidden">
-        <div id="modal-content">
-            <span id="close-modal">&times;</span>
+        <div id="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+            <button id="close-modal" type="button" aria-label="Close">&times;</button>
             <h3 id="modal-name"></h3>
             <p id="modal-subtitle"></p>
             <div id="modal-category" class="category"></div>
@@ -42,7 +135,7 @@
             <p id="modal-accessories"></p>
             <img id="modal-image" src="" alt="app image">
             <button id="optimus-button">Send to Optimus</button>
-            <button id="neuralink-button">Send to Neuralink</button>
+            <button id="neuralink-button" class="hidden">Send to Neuralink</button>
             <button id="close-modal-mobile" class="hidden">Close</button>
         </div>
     </div>
@@ -50,8 +143,12 @@
         <div id="neuralink-animation"></div>
         <div id="neuralink-install-message">Installing...</div>
     </div>
-    <script src="app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
