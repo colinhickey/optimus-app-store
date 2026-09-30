@@ -14,6 +14,11 @@ const SHELVES = [
     filter: (app) => app.editorsPick,
   },
   {
+    title: "New This Week",
+    subtitle: "Fresh skills, straight off the training cluster",
+    filter: (app) => app.isNew,
+  },
+  {
     title: "Neuralink Ready",
     subtitle: "Install on your Optimus, or straight into your own brain",
     filter: (app) => app.neuralink,
@@ -31,6 +36,11 @@ const SHELVES = [
     filter: (app) => ["Household", "Pets", "Food & Drink", "Security"].includes(app.category),
   },
   {
+    title: "Weekends Sorted",
+    subtitle: "Sport, games, errands and a better first dance",
+    filter: (app) => ["Sport & Leisure", "Entertainment", "Out & About"].includes(app.category),
+  },
+  {
     title: "Looking After People",
     subtitle: "Care, companionship and a spoonful of sugar",
     filter: (app) => app.category === "Care",
@@ -38,7 +48,7 @@ const SHELVES = [
   {
     title: "For the Professionals",
     subtitle: "Augment your workforce. Or replace it.",
-    filter: (app) => ["Pro", "Science", "Transport"].includes(app.category),
+    filter: (app) => ["Pro", "Science"].includes(app.category),
   },
 ];
 
@@ -63,6 +73,7 @@ function cardHTML(app) {
       <span class="card-media">
         <img src="images/${escapeHTML(app.image)}" alt="" loading="lazy" width="1024" height="1024">
         ${app.neuralink ? `<span class="nl-badge">${neuralinkSVG}Neuralink</span>` : ""}
+        ${app.isNew ? `<span class="new-badge">New</span>` : ""}
       </span>
       <span class="card-body">
         <span class="card-title">${escapeHTML(app.name)}</span>
@@ -187,7 +198,8 @@ export function initStore(brain) {
   function renderToday() {
     document.getElementById("today-date").textContent = new Date()
       .toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" });
-    const featured = apps.filter((app) => app.featured);
+    // New launches lead the carousel.
+    const featured = apps.filter((app) => app.featured).sort((a, b) => Boolean(b.isNew) - Boolean(a.isNew));
     todayTrack.innerHTML = featured.map(todayCardHTML).join("");
     todayDots.innerHTML = featured
       .map((app, i) => `<button type="button" aria-label="Show ${escapeHTML(app.name)}" data-index="${i}"></button>`)
@@ -304,6 +316,17 @@ export function initStore(brain) {
     if (target) detail.open(apps[target.dataset.id], { from: target });
   });
   enableTilt(store);
+
+  const smooth = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+  document.getElementById("back-to-store").addEventListener("click", (event) => {
+    event.preventDefault();
+    const headerHeight = document.getElementById("header").offsetHeight;
+    window.scrollTo({ top: toolbarAnchor.getBoundingClientRect().bottom + window.scrollY - headerHeight, behavior: smooth() });
+  });
+  document.getElementById("replay-intro").addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: smooth() });
+  });
 
   // Price pills read "Installed" once a skill is on the robot.
   function refreshPills() {

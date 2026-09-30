@@ -211,7 +211,7 @@
             "name": "Johnny Cab",
             "subtitle": "Have an old gasoline car and want FSD? Johnny Cab is here!",
             "description": "Optimus will literally take the driving seat and take you to where you need to go.",
-            "category": "Transport",
+            "category": "Out & About",
             "rating": 3.8,
             "price": "$100/month",
             "image": "johnny-cab.jpg",
@@ -243,11 +243,11 @@
         {
             "name": "Dog",
             "subtitle": "Aibo for the modern age",
-            "description": "Want a dog but don't have time? With this model install your Optimus will be your best friend. It'll fetch slippers, bark at the postman and no need for walks or toilet sessions in the rain.",
+            "description": "Want a dog but don't have time? With this install your Optimus becomes your best friend. It'll fetch your slippers, bark at the postman and trot happily beside you on walks, with none of the toilet stops in the rain.",
             "category": "Pets",
             "rating": 3.2,
             "price": "Free",
-            "image": "dog.png",
+            "image": "dog-pet.jpg",
             "neuralink": true,
             "developer": "Good Boy Neural",
             "version": "1.0.4",
@@ -255,7 +255,7 @@
             "size": "0.3 TB",
             "ageRating": "4+",
             "reviewCount": 6630,
-            "whatsNew": "Added 'zoomies' mode. Tail wag calibrated to 3.2Hz.",
+            "whatsNew": "Now walks to heel. Added 'zoomies' mode. Tail wag calibrated to 3.2Hz (it does not have a tail).",
             "neuralSkill": "fetch, sit and roll over on command",
             "reviews": [
                 {
@@ -270,7 +270,8 @@
                     "title": "Please stop",
                     "body": "A 1.7m robot barking at me every morning is a lot."
                 }
-            ]
+            ],
+            "accessories": "Lead (for appearances)"
         },
         {
             "name": "Personal Trainer",
@@ -532,6 +533,348 @@
                     "body": "Insists everything 'belongs in a museum', including my husband's shed."
                 }
             ]
+        },
+        {
+            "name": "Happy Little Trees",
+            "subtitle": "Paint like a legend of daytime TV",
+            "description": "Trained on 403 episodes of soft-spoken landscape painting. Optimus will paint a serene mountain lake in under 30 minutes, narrating gently the whole time. There are no mistakes, only happy little accidents, and a squirrel that appears to have moved in.",
+            "category": "Entertainment",
+            "rating": 4.9,
+            "price": "Free",
+            "accessories": "Easel, palette knife, squirrel (optional)",
+            "image": "happy-little-trees.jpg",
+            "neuralink": true,
+            "neuralSkill": "paint a mountain lake in under 30 minutes",
+            "featured": {
+                "eyebrow": "New",
+                "headline": "No mistakes. Just happy little accidents."
+            },
+            "developer": "Almighty Mountain Studios",
+            "version": "1.0.0",
+            "updated": "2 days ago",
+            "size": "1.2 TB",
+            "ageRating": "4+",
+            "reviewCount": 23008,
+            "whatsNew": "Launch release. Beats the devil out of the brush responsibly.",
+            "reviews": [
+                {
+                    "author": "CalmCarol",
+                    "rating": 5,
+                    "title": "My blood pressure dropped",
+                    "body": "I don't even watch the painting. I just listen to it talk about clouds."
+                },
+                {
+                    "author": "ArtTeacherAl",
+                    "rating": 4,
+                    "title": "Every painting has a cabin",
+                    "body": "Every single one. There is always a cabin. It's a lovely cabin, though."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Spark Joy",
+            "subtitle": "Tidying, with gratitude",
+            "description": "Optimus holds each of your belongings, asks whether it sparks joy, and thanks the ones that don't before they go. Drawers fold vertically. Wardrobes breathe. Your partner's band T-shirts face a difficult conversation.",
+            "category": "Household",
+            "rating": 4.6,
+            "price": "$9.99",
+            "accessories": "Small boxes. So many small boxes.",
+            "image": "spark-joy.jpg",
+            "neuralink": true,
+            "neuralSkill": "fold a fitted sheet",
+            "editorsPick": true,
+            "developer": "Folded Neatly Ltd.",
+            "version": "2.0.0",
+            "updated": "1 week ago",
+            "size": "0.9 TB",
+            "ageRating": "4+",
+            "reviewCount": 41277,
+            "whatsNew": "Can now fold a fitted sheet. We are as surprised as you are.",
+            "reviews": [
+                {
+                    "author": "MinimalMaya",
+                    "rating": 5,
+                    "title": "My flat is so calm",
+                    "body": "Down to 30 possessions. Optimus thanked my ex's hoodie very sincerely before it left."
+                },
+                {
+                    "author": "HoarderHank",
+                    "rating": 2,
+                    "title": "It asked about my cables",
+                    "body": "I need all of those cables. Every one. They spark joy in a way the robot doesn't understand."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Jeeves",
+            "subtitle": "A very English butler",
+            "description": "Impeccable service trained on a century of country-house etiquette. Optimus will draw your bath, decant your port, iron your newspaper and extract you from social engagements with a discreet cough. Very discreet. Mostly.",
+            "category": "Household",
+            "rating": 4.8,
+            "price": "$250/month",
+            "accessories": "Tailcoat, white gloves, silver tray",
+            "image": "jeeves.jpg",
+            "neuralink": false,
+            "editorsPick": true,
+            "developer": "Below Stairs Robotics",
+            "version": "3.1.4",
+            "updated": "5 days ago",
+            "size": "2.7 TB",
+            "ageRating": "4+",
+            "reviewCount": 18840,
+            "whatsNew": "Improved raised-eyebrow response to questionable outfits. Tea now arrives before you realise you wanted it.",
+            "reviews": [
+                {
+                    "author": "LordOfTheSemi",
+                    "rating": 5,
+                    "title": "I feel like landed gentry",
+                    "body": "It announces me when I walk into my own kitchen. I have never felt more important."
+                },
+                {
+                    "author": "CasualCarl",
+                    "rating": 3,
+                    "title": "A little judgemental",
+                    "body": "I wore shorts to dinner. It said nothing. It didn't have to."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Flat-Pack Assembler",
+            "subtitle": "Every screw accounted for",
+            "description": "Any flat-pack furniture, from any store, with instructions in any language (including the ones with no words). Optimus builds it in minutes, never has leftover screws, and has never once said 'it's fine, it's just a bit wobbly'.",
+            "category": "Household",
+            "rating": 4.7,
+            "price": "$4.99",
+            "accessories": "Allen key (included, obviously)",
+            "image": "flat-pack.jpg",
+            "neuralink": true,
+            "neuralSkill": "assemble a wardrobe without an argument",
+            "developer": "Dowel & Cam Lock AI",
+            "version": "6.2.0",
+            "updated": "3 days ago",
+            "size": "1.1 TB",
+            "ageRating": "4+",
+            "reviewCount": 88215,
+            "whatsNew": "Added support for wardrobes with 400+ parts. Relationship-saving mode is now on by default.",
+            "reviews": [
+                {
+                    "author": "NewHomeNoor",
+                    "rating": 5,
+                    "title": "Saved my relationship",
+                    "body": "We moved flat and nobody cried. A first in recorded history."
+                },
+                {
+                    "author": "ScrewCounter",
+                    "rating": 5,
+                    "title": "No spare parts",
+                    "body": "It used every single screw. I checked the bag three times. I don't trust it."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Queue Stander",
+            "subtitle": "Stands in line so you don't have to",
+            "description": "Concert tickets, new phone launches, the post office on a Monday. Optimus waits patiently for as long as it takes, stays unfailingly polite, and texts you when it's nearly your turn. Now fluent in the British art of tutting.",
+            "category": "Out & About",
+            "rating": 4.1,
+            "price": "$2/hour",
+            "accessories": "Folding chair, flask, bobble hat",
+            "image": "queue-stander.jpg",
+            "neuralink": false,
+            "developer": "Patience Labs",
+            "version": "1.4.2",
+            "updated": "2 weeks ago",
+            "size": "0.2 TB",
+            "ageRating": "4+",
+            "reviewCount": 12603,
+            "whatsNew": "Added passive-aggressive tutting. Will no longer let people 'just squeeze in'.",
+            "reviews": [
+                {
+                    "author": "GigGoerGrace",
+                    "rating": 5,
+                    "title": "Front row, zero effort",
+                    "body": "Optimus queued for 19 hours. I turned up with a coffee. Best concert of my life."
+                },
+                {
+                    "author": "PostOfficePaul",
+                    "rating": 3,
+                    "title": "Queue etiquette issues",
+                    "body": "It queued so well that three strangers started queueing behind it for no reason."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Centre Court",
+            "subtitle": "A tireless tennis sparring partner",
+            "description": "Returns everything, never gets tired, and never calls your shots out when they were clearly in. Choose from baseline grinder, serve-and-volley or 'let the kid win' modes. Grass, clay and hard court compatible.",
+            "category": "Sport & Leisure",
+            "rating": 4.3,
+            "price": "$30/month",
+            "accessories": "Racket, white sweatband",
+            "image": "centre-court.jpg",
+            "neuralink": true,
+            "neuralSkill": "serve at 130mph",
+            "developer": "Deuce Dynamics",
+            "version": "2.5.0",
+            "updated": "4 days ago",
+            "size": "1.8 TB",
+            "ageRating": "4+",
+            "reviewCount": 9954,
+            "whatsNew": "Line calls are now 100% accurate, which has caused some tension.",
+            "reviews": [
+                {
+                    "author": "ClubPlayerClio",
+                    "rating": 4,
+                    "title": "My backhand is unrecognisable",
+                    "body": "Two weeks of rallies and I finally beat my brother. Optimus let me win the last point, I'm sure of it."
+                },
+                {
+                    "author": "WeekendWill",
+                    "rating": 3,
+                    "title": "Too good",
+                    "body": "Set it to 'casual'. It still hit a winner past me while politely apologising."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Sommelier",
+            "subtitle": "A trained palate for your dinner parties",
+            "description": "Trained on tasting notes from ten thousand cellars. Optimus pairs every dish, decants with theatrical precision and describes your £6 supermarket red as 'cheeky, with notes of optimism'. Cannot drink. Will judge.",
+            "category": "Food & Drink",
+            "rating": 4.4,
+            "price": "$75",
+            "accessories": "Tastevin, corkscrew, waistcoat",
+            "image": "sommelier.jpg",
+            "neuralink": true,
+            "neuralSkill": "identify a 1982 Bordeaux blindfolded",
+            "developer": "Terroir Neural",
+            "version": "1.9.2",
+            "updated": "1 week ago",
+            "size": "3.9 TB",
+            "ageRating": "18+",
+            "reviewCount": 7310,
+            "whatsNew": "Now detects corked bottles from across the room. Added a 'polite face' for gifted wines.",
+            "reviews": [
+                {
+                    "author": "DinnerPartyDiana",
+                    "rating": 5,
+                    "title": "Guests were stunned",
+                    "body": "It described my lasagne pairing for four minutes. Nobody interrupted."
+                },
+                {
+                    "author": "BoxWineBarry",
+                    "rating": 3,
+                    "title": "Rude, but correct",
+                    "body": "It held my wine up to the light, paused, and said 'interesting' in a way that hurt."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Wedding DJ",
+            "subtitle": "Reads the room. Plays the classics.",
+            "description": "Scans the dance floor 60 times a second and knows exactly when to drop the classics, the slow one, and the song your uncle will absolutely do the actions to. Handles requests with grace, and ignores them with even more.",
+            "category": "Entertainment",
+            "rating": 3.9,
+            "price": "$400/night",
+            "accessories": "Sequinned jacket, one oversized headphone",
+            "image": "wedding-dj.jpg",
+            "neuralink": false,
+            "developer": "Floor Filler Systems",
+            "version": "4.0.1",
+            "updated": "2 days ago",
+            "size": "5.5 TB",
+            "ageRating": "12+",
+            "reviewCount": 15520,
+            "whatsNew": "Added last-song detection. Will no longer play the conga twice.",
+            "reviews": [
+                {
+                    "author": "BrideToBeBella",
+                    "rating": 5,
+                    "title": "The dance floor never emptied",
+                    "body": "Even Grandad did the actions. Optimus did them better."
+                },
+                {
+                    "author": "GroomsmanGreg",
+                    "rating": 2,
+                    "title": "It took the mic",
+                    "body": "Gave a heartfelt speech nobody asked for. It was, to be fair, better than mine."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Grandmaster",
+            "subtitle": "Chess coaching from every champion, ever",
+            "description": "Every grandmaster game ever recorded, distilled into one very patient opponent. Optimus adapts to your level, explains your blunders gently, and occasionally lets you win so you'll keep playing.",
+            "category": "Sport & Leisure",
+            "rating": 4.5,
+            "price": "$15",
+            "accessories": "Chess set, park bench, flat cap for opponent",
+            "image": "grandmaster.jpg",
+            "neuralink": true,
+            "neuralSkill": "see twelve moves ahead",
+            "developer": "Endgame Robotics",
+            "version": "3.3.0",
+            "updated": "3 weeks ago",
+            "size": "0.7 TB",
+            "ageRating": "4+",
+            "reviewCount": 19201,
+            "whatsNew": "Added a chin-on-hand animation so it looks like it's thinking. It isn't.",
+            "reviews": [
+                {
+                    "author": "ParkBenchPete",
+                    "rating": 4,
+                    "title": "Lost 212 games in a row",
+                    "body": "Then won one. Optimus looked genuinely proud of me. Or pretended to."
+                },
+                {
+                    "author": "KnightRider99",
+                    "rating": 5,
+                    "title": "From 900 to 1600",
+                    "body": "It explains every blunder like a kind grandparent. Very humbling."
+                }
+            ],
+            "isNew": true
+        },
+        {
+            "name": "Head Gardener",
+            "subtitle": "Prize-winning borders, perfect stripes",
+            "description": "Trained on a century of flower-show winners. Optimus mows perfect stripes, deadheads at dawn, knows every Latin name and talks encouragingly to your tomatoes, which apparently works.",
+            "category": "Household",
+            "rating": 4.8,
+            "price": "$120/month",
+            "accessories": "Straw hat, canvas apron, wheelbarrow",
+            "image": "head-gardener.jpg",
+            "neuralink": false,
+            "developer": "Green Fingers Neural",
+            "version": "2.8.0",
+            "updated": "6 days ago",
+            "size": "2.4 TB",
+            "ageRating": "4+",
+            "reviewCount": 26733,
+            "whatsNew": "Slug diplomacy module added. Lawn stripes are now 7% straighter.",
+            "reviews": [
+                {
+                    "author": "VeggiePatchVera",
+                    "rating": 5,
+                    "title": "Tomatoes the size of fists",
+                    "body": "It talks to them every morning. I've started to feel left out."
+                },
+                {
+                    "author": "NeatLawnNeil",
+                    "rating": 5,
+                    "title": "The neighbours are furious",
+                    "body": "Won the village show. The committee has asked for 'a declaration of human involvement'."
+                }
+            ],
+            "isNew": true
         }
     ]
 }

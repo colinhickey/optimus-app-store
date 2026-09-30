@@ -7,10 +7,19 @@
     <meta name="theme-color" content="#000000">
     <title>Optimus App Store</title>
     <meta name="description" content="Download new skills straight into your Optimus, or your own brain. A parody app store for the humanoid robot age.">
+    <!-- Social previews: crawlers need absolute URLs, so replace these with the live address once deployed -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Optimus App Store">
+    <meta property="og:description" content="Skills are just software now. Download them into your robot, or your brain.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/homepage.jpg">
+    <link rel="preload" as="image" href="images/hero-optimus-portrait.jpg" media="(max-aspect-ratio: 3/4)">
+    <link rel="preload" as="image" href="images/hero-optimus.jpg" media="(min-aspect-ratio: 3/4)">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -30,7 +39,12 @@
 
     <section id="intro" aria-label="Intro: scroll to travel into Optimus's mind">
         <div class="intro-stage">
-            <div id="hero"><img id="hero-image" src="images/homepage.jpg" alt="The Optimus humanoid robot standing in darkness"></div>
+            <div id="hero">
+                <picture>
+                    <source media="(max-aspect-ratio: 3/4)" srcset="images/hero-optimus-portrait.jpg">
+                    <img id="hero-image" src="images/hero-optimus.jpg" alt="The Optimus humanoid robot standing in darkness">
+                </picture>
+            </div>
             <div id="visor-glint" aria-hidden="true"></div>
             <div id="hud" aria-hidden="true">
                 <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
@@ -124,8 +138,41 @@
         </section>
     </main>
 
+    <section id="manifesto" class="wrap" aria-labelledby="manifesto-title">
+        <p class="eyebrow">Why this exists</p>
+        <h2 id="manifesto-title">Skills are the new apps.</h2>
+        <p class="manifesto-lead">Every app in this store is a joke. The idea behind it isn't.</p>
+        <div class="manifesto-body">
+            <p>Software turned the phone in your pocket into a camera, a map and a bank without changing the hardware. Humanoid robots are about to do the same to physical work. The body stays the same. The abilities are downloaded.</p>
+            <p>When a robot can install "plumber" as easily as your phone installs a game, some questions stop being hypothetical. Who owns a skill that was learned by watching someone work? What is expertise worth when it can be copied for $4.99? And if an upload can go into a robot, how long until it can go into us?</p>
+        </div>
+        <div class="manifesto-points">
+            <article>
+                <span class="point-number">01</span>
+                <h3>Trained on us</h3>
+                <p>Every skill here was learned from people: hours of someone's craft turned into a model. The chefs, carers and tradespeople are the training data.</p>
+            </article>
+            <article>
+                <span class="point-number">02</span>
+                <h3>Priced like apps</h3>
+                <p>A lifetime of expertise, available as a one-off purchase or a monthly subscription. Competence is getting a price tag.</p>
+            </article>
+            <article>
+                <span class="point-number">03</span>
+                <h3>Installed in us</h3>
+                <p>Brain implants are already in human trials. The "Beam to brain" button is a joke today. The question it asks isn't.</p>
+            </article>
+        </div>
+        <p class="manifesto-close">Build the future carefully. Somebody is going to download it.</p>
+        <div class="manifesto-actions">
+            <a href="#toolbar-anchor" class="install-btn install-optimus" id="back-to-store">Browse the store</a>
+            <a href="#top" class="share-btn" id="replay-intro">Replay the intro</a>
+        </div>
+    </section>
+
     <footer id="footer">
-        <span>Made with 🫀 by <a href="https://colinhickey.ltd">Colin</a></span>
+        <p class="disclaimer">A parody. Not affiliated with, or endorsed by, Tesla, Inc. or Neuralink Corp. Every app is imaginary, every review is made up, and no robots, brains or celebrity chefs were harmed.</p>
+        <p>Made with 🫀 by <a href="https://colinhickey.ltd">Colin</a></p>
     </footer>
 
     <dialog id="app-sheet" class="sheet" aria-labelledby="sheet-title">

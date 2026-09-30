@@ -3,16 +3,24 @@
 import { appsPromise } from "./data.js";
 
 // Visor geometry is measured as fractions of the image (centre x/y, width/height).
+// focusY is where the visor sits on screen before the push-in (fraction of viewport height).
 // maxZoom is capped by image resolution so the photo never visibly pixelates;
 // the iris vignette closes in to cover whatever the zoom can't.
-// Add a portrait entry with `media: "(max-aspect-ratio: 3/4)"` once that image exists.
 const HERO_SOURCES = [
   {
-    src: "images/homepage.jpg", // placeholder until images/hero-optimus.jpg is generated
-    width: 1080,
-    height: 721,
-    visor: { x: 0.492, y: 0.264, w: 0.139, h: 0.284 },
-    maxZoom: 4.5,
+    media: "(max-aspect-ratio: 3/4)", // must match the <source> media in index.html
+    width: 941,
+    height: 1672,
+    visor: { x: 0.502, y: 0.359, w: 0.484, h: 0.395 },
+    focusY: 0.5,
+    maxZoom: 4,
+  },
+  {
+    width: 1672,
+    height: 941,
+    visor: { x: 0.4994, y: 0.335, w: 0.233, h: 0.52 },
+    focusY: 0.42,
+    maxZoom: 4,
   },
 ];
 
@@ -43,7 +51,6 @@ export function initIntro(brain) {
   const intro = document.getElementById("intro");
   const stage = intro.querySelector(".intro-stage");
   const hero = document.getElementById("hero");
-  const heroImage = document.getElementById("hero-image");
   const glint = document.getElementById("visor-glint");
   const hud = document.getElementById("hud");
   const hudSlots = document.getElementById("hud-slots");
@@ -62,8 +69,7 @@ export function initIntro(brain) {
   const logo = document.getElementById("logo");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const source = HERO_SOURCES.find((s) => !s.media || matchMedia(s.media).matches);
-  heroImage.src = source.src;
+  let source;
 
   const easeIn = gsap.parseEase("power2.in");
   const easeInOut = gsap.parseEase("power2.inOut");
@@ -83,14 +89,19 @@ export function initIntro(brain) {
   // Fit the hero like object-fit: cover, positioned so the visor sits in the upper-middle of the screen.
   // The image edges are feathered to black, so it may drop below the top edge to make headroom for the title.
   function measure() {
+    // The <picture> element swaps artwork on rotate; pick the matching measurements.
+    source = HERO_SOURCES.find((s) => !s.media || matchMedia(s.media).matches);
     const vw = stage.clientWidth;
     const vh = stage.clientHeight;
     const scale = Math.max(vw / source.width, vh / source.height);
     const w = source.width * scale;
     const h = source.height * scale;
     const left = clamp(vw / 2 - source.visor.x * w, vw - w, 0);
-    const top = clamp(vh * 0.42 - source.visor.y * h, vh - h, vh * 0.2);
-    const coverZoom = (vh * 1.05) / (source.visor.h * h);
+    const top = clamp(vh * source.focusY - source.visor.y * h, vh - h, vh * 0.2);
+    // Zoom at which the visor ellipse, centred on screen, covers the whole viewport.
+    const rx = (source.visor.w * w) / 2;
+    const ry = (source.visor.h * h) / 2;
+    const coverZoom = Math.hypot(vw / 2 / rx, vh / 2 / ry) * 1.02;
     hero.style.width = `${w}px`;
     hero.style.height = `${h}px`;
     layout = { vw, vh, w, h, left, top, zoom: clamp(coverZoom, 1.5, source.maxZoom) };
