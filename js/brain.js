@@ -35,7 +35,7 @@ export function createBrain(canvas) {
   const ctx = canvas.getContext("2d");
   const sprites = COLORS.map(makeSprite);
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const state = { camZ: 6000, opacity: 0, imageT: 0 };
+  const state = { camZ: 6000, opacity: 0, imageT: 0, activity: 1 };
   const nodes = [];
   const edges = [];
   const pulses = [];
@@ -106,8 +106,8 @@ export function createBrain(canvas) {
 
   function update(dt) {
     time += dt;
-    const spawnCount = Math.random() < dt * 40 ? 1 : 0;
-    for (let i = 0; i < spawnCount && pulses.length < 140; i++) spawnPulse();
+    const spawnCount = Math.floor(dt * 40 * state.activity + Math.random());
+    for (let i = 0; i < spawnCount && pulses.length < 140 * state.activity; i++) spawnPulse();
 
     for (let i = pulses.length - 1; i >= 0; i--) {
       const pulse = pulses[i];
@@ -117,7 +117,7 @@ export function createBrain(canvas) {
         const target = nodes[pulse.b];
         target.glow = 1;
         // Signals propagate: most pulses fire onward to a new neighbour.
-        if (Math.random() < 0.65 && pulses.length < 140) {
+        if (Math.random() < 0.65 && pulses.length < 140 * state.activity) {
           const next = target.neighbors.filter((n) => n !== pulse.a);
           if (next.length) spawnPulse(pulse.b, next[Math.floor(Math.random() * next.length)]);
         }
@@ -261,5 +261,5 @@ export function createBrain(canvas) {
     else if (state.opacity > 0.001) start();
   });
 
-  return { setState, setImages };
+  return { setState, setImages, getState: () => ({ ...state }) };
 }

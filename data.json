@@ -13,7 +13,28 @@
             "featured": {
                 "eyebrow": "Premiere",
                 "headline": "Your front door just got a roundhouse kick."
-            }
+            },
+            "developer": "Roundhouse Robotics",
+            "version": "10.0",
+            "updated": "1 day ago",
+            "size": "0.8 TB",
+            "ageRating": "18+",
+            "reviewCount": 48213,
+            "whatsNew": "Removed the 'mercy' setting. Nobody ever used it.",
+            "reviews": [
+                {
+                    "author": "Door2DoorDave",
+                    "rating": 5,
+                    "title": "No longer selling double glazing",
+                    "body": "Knocked on a house running this skill. Optimus just nodded at me. I've changed careers."
+                },
+                {
+                    "author": "HomeownerHannah",
+                    "rating": 5,
+                    "title": "Quietest street in town",
+                    "body": "Even the local cats walk the long way round now. Beard sheds a bit."
+                }
+            ]
         },
         {
             "name": "Gordon Ramsay™",
@@ -28,7 +49,29 @@
             "featured": {
                 "eyebrow": "App of the Day",
                 "headline": "Michelin-star dinners. Mild language warning."
-            }
+            },
+            "developer": "Swear Jar Labs",
+            "version": "4.2.0",
+            "updated": "3 days ago",
+            "size": "6.4 TB",
+            "ageRating": "18+",
+            "reviewCount": 91877,
+            "whatsNew": "Reduced bleep latency to 12ms. Risotto is now only described as 'raw' 40% of the time.",
+            "neuralSkill": "cook like a Michelin-starred chef",
+            "reviews": [
+                {
+                    "author": "Beans_on_Toast",
+                    "rating": 5,
+                    "title": "Dinner was incredible",
+                    "body": "Also called my toaster a donkey. The toaster has not recovered."
+                },
+                {
+                    "author": "MumOfThree",
+                    "rating": 4,
+                    "title": "Kids eat vegetables now",
+                    "body": "Out of fear, mostly. The swear jar paid for our holiday."
+                }
+            ]
         },
         {
             "name": "Dog Walker",
@@ -39,7 +82,28 @@
             "price": "$5",
             "image": "dog-walker.jpeg",
             "neuralink": false,
-            "editorsPick": true
+            "editorsPick": true,
+            "developer": "Leash Dynamics",
+            "version": "2.1.3",
+            "updated": "1 week ago",
+            "size": "1.9 TB",
+            "ageRating": "4+",
+            "reviewCount": 22410,
+            "whatsNew": "Now classifies squirrels as 'not a threat, just vibes'. Fixed an issue where Optimus would fetch the stick itself.",
+            "reviews": [
+                {
+                    "author": "BorderCollieBen",
+                    "rating": 5,
+                    "title": "Dog is exhausted, finally",
+                    "body": "Seven walks a day. Seven. He sleeps like a log and so do I."
+                },
+                {
+                    "author": "PoodleParent",
+                    "rating": 3,
+                    "title": "Too efficient",
+                    "body": "Walked all nine dogs on the street at once. Some of them weren't ours."
+                }
+            ]
         },
         {
             "name": "Mary Poppins™",
@@ -53,7 +117,28 @@
             "featured": {
                 "eyebrow": "Fan Favourite",
                 "headline": "Practically perfect in every way. Mostly."
-            }
+            },
+            "developer": "Spoonful Systems",
+            "version": "1.9.64",
+            "updated": "2 weeks ago",
+            "size": "3.1 TB",
+            "ageRating": "4+",
+            "reviewCount": 15022,
+            "whatsNew": "Umbrella flight now requires planning permission. Chimney sweep accent patched (partially).",
+            "reviews": [
+                {
+                    "author": "TiredDadTom",
+                    "rating": 4,
+                    "title": "Kids tidied their rooms",
+                    "body": "With a click of the fingers. I don't know how and I'm afraid to ask."
+                },
+                {
+                    "author": "NeighbourNina",
+                    "rating": 2,
+                    "title": "Where are the Hendersons' kids?",
+                    "body": "Last seen floating over the park holding a kite. Very polite about it though."
+                }
+            ]
         },
         {
             "name": "Handyman",
@@ -65,7 +150,29 @@
             "accessories": "Toolbox not included",
             "image": "handyman.jpeg",
             "neuralink": true,
-            "editorsPick": true
+            "editorsPick": true,
+            "developer": "Spirit Level Inc.",
+            "version": "3.0.2",
+            "updated": "5 days ago",
+            "size": "4.7 TB",
+            "ageRating": "4+",
+            "reviewCount": 37560,
+            "whatsNew": "Now puts tools back where it found them. Shelves are now 100% level (previously 98%).",
+            "neuralSkill": "fix anything in the house",
+            "reviews": [
+                {
+                    "author": "DIY_Disaster_Dan",
+                    "rating": 5,
+                    "title": "Undid my DIY",
+                    "body": "Fixed my shelf, my door, and quietly re-did the tiling I was proud of."
+                },
+                {
+                    "author": "HoneyDoHelen",
+                    "rating": 5,
+                    "title": "Finally",
+                    "body": "The list is done. I've started writing a new list out of habit."
+                }
+            ]
         },
         {
             "name": "Dish Washing",
@@ -77,7 +184,28 @@
             "accessories": "Marigolds",
             "image": "washing-up.jpeg",
             "neuralink": false,
-            "editorsPick": true
+            "editorsPick": true,
+            "developer": "Suds & Servos",
+            "version": "5.5.0",
+            "updated": "2 days ago",
+            "size": "0.6 TB",
+            "ageRating": "4+",
+            "reviewCount": 120443,
+            "whatsNew": "Plates now stack by size AND colour. Stopped hand-drying the dishwasher.",
+            "reviews": [
+                {
+                    "author": "StudentSam",
+                    "rating": 5,
+                    "title": "Changed my life",
+                    "body": "Our house share has had zero arguments this month. Unprecedented."
+                },
+                {
+                    "author": "Grandma_Joan",
+                    "rating": 4,
+                    "title": "Very thorough",
+                    "body": "Washed the good china, the everyday china, and the cat's bowl while the cat was using it."
+                }
+            ]
         },
         {
             "name": "Johnny Cab",
@@ -89,7 +217,28 @@
             "image": "johnny-cab.jpg",
             "accessories": "Suit, hat and mask",
             "neuralink": false,
-            "editorsPick": true
+            "editorsPick": true,
+            "developer": "Johnny Cab Mobility",
+            "version": "0.9.9 beta",
+            "updated": "6 hours ago",
+            "size": "2.2 TB",
+            "ageRating": "12+",
+            "reviewCount": 8114,
+            "whatsNew": "Improved small talk. Will no longer drive off without you after a fare dispute.",
+            "reviews": [
+                {
+                    "author": "CommuterKev",
+                    "rating": 4,
+                    "title": "Surprisingly smooth",
+                    "body": "Old Ford Fiesta, now self-driving. The grin is unsettling."
+                },
+                {
+                    "author": "Late_Again_Lucy",
+                    "rating": 3,
+                    "title": "\"We hope you enjoyed the ride\"",
+                    "body": "It says that every time. Even when we end up in a hedge."
+                }
+            ]
         },
         {
             "name": "Dog",
@@ -99,7 +248,29 @@
             "rating": 3.2,
             "price": "Free",
             "image": "dog.png",
-            "neuralink": true
+            "neuralink": true,
+            "developer": "Good Boy Neural",
+            "version": "1.0.4",
+            "updated": "1 month ago",
+            "size": "0.3 TB",
+            "ageRating": "4+",
+            "reviewCount": 6630,
+            "whatsNew": "Added 'zoomies' mode. Tail wag calibrated to 3.2Hz.",
+            "neuralSkill": "fetch, sit and roll over on command",
+            "reviews": [
+                {
+                    "author": "AllergyAndy",
+                    "rating": 4,
+                    "title": "Finally a dog",
+                    "body": "No fur, no sneezing. Does chew my slippers, which feels unnecessary for a robot."
+                },
+                {
+                    "author": "PostmanPete",
+                    "rating": 1,
+                    "title": "Please stop",
+                    "body": "A 1.7m robot barking at me every morning is a lot."
+                }
+            ]
         },
         {
             "name": "Personal Trainer",
@@ -110,7 +281,28 @@
             "price": "$100",
             "image": "personal-trainer.jpeg",
             "neuralink": false,
-            "editorsPick": true
+            "editorsPick": true,
+            "developer": "Rep Counter AI",
+            "version": "7.1.0",
+            "updated": "4 days ago",
+            "size": "2.8 TB",
+            "ageRating": "12+",
+            "reviewCount": 54329,
+            "whatsNew": "New 'motivational yelling' volume slider. Biscuits are now hidden more effectively.",
+            "reviews": [
+                {
+                    "author": "CouchToFiveK",
+                    "rating": 5,
+                    "title": "Lost 6kg",
+                    "body": "Optimus ran beside me holding the biscuit tin just out of reach. Genius."
+                },
+                {
+                    "author": "GymShyGemma",
+                    "rating": 4,
+                    "title": "Relentless",
+                    "body": "Woke me at 5am for burpees. Knows where I sleep."
+                }
+            ]
         },
         {
             "name": "Ski Instructor",
@@ -121,7 +313,28 @@
             "price": "$100",
             "accessories": "Optimus Ski Attachments",
             "image": "ski-instructor.jpeg",
-            "neuralink": false
+            "neuralink": false,
+            "developer": "Piste Perfect Labs",
+            "version": "2.3.1",
+            "updated": "3 weeks ago",
+            "size": "3.6 TB",
+            "ageRating": "12+",
+            "reviewCount": 4410,
+            "whatsNew": "Improved balance on black runs. Stopped 'demonstrating' off the cliff edge.",
+            "reviews": [
+                {
+                    "author": "SnowPloughSue",
+                    "rating": 4,
+                    "title": "From pizza to french fries",
+                    "body": "Parallel turns in two days. Optimus did the après-ski too, oddly."
+                },
+                {
+                    "author": "Chalet_Charlie",
+                    "rating": 3,
+                    "title": "Excellent teacher",
+                    "body": "Unfortunately it's also better than me and everyone was watching."
+                }
+            ]
         },
         {
             "name": "Mechanic's Assistant",
@@ -131,7 +344,29 @@
             "rating": 5,
             "price": "$100",
             "image": "mechanics-assistant.jpeg",
-            "neuralink": true
+            "neuralink": true,
+            "developer": "Torque Neural",
+            "version": "4.0.0",
+            "updated": "1 week ago",
+            "size": "3.3 TB",
+            "ageRating": "12+",
+            "reviewCount": 11890,
+            "whatsNew": "Now hands you the right socket before you ask. Added a sharp intake of breath when quoting.",
+            "neuralSkill": "rebuild an engine blindfolded",
+            "reviews": [
+                {
+                    "author": "GreasyGaz",
+                    "rating": 5,
+                    "title": "Best apprentice I've had",
+                    "body": "Never late, never on its phone, lifted the engine block with one hand."
+                },
+                {
+                    "author": "ClassicCarClaire",
+                    "rating": 5,
+                    "title": "Knows every bolt",
+                    "body": "Diagnosed my old Jag just by listening to it. Then sighed."
+                }
+            ]
         },
         {
             "name": "Dental Technician",
@@ -141,7 +376,29 @@
             "rating": 4,
             "price": "$20/hour",
             "image": "dental-assistant.jpeg",
-            "neuralink": true
+            "neuralink": true,
+            "developer": "Molar Motion",
+            "version": "2.0.1",
+            "updated": "2 weeks ago",
+            "size": "1.4 TB",
+            "ageRating": "18+",
+            "reviewCount": 3021,
+            "whatsNew": "Steadier suction arm. Now says 'just a little pressure' at the correct moments.",
+            "neuralSkill": "assist on a root canal",
+            "reviews": [
+                {
+                    "author": "DrFillmore",
+                    "rating": 4,
+                    "title": "Reliable",
+                    "body": "Hands never shake. Patients are calmer. Some ask to speak to the human."
+                },
+                {
+                    "author": "NervousNigel",
+                    "rating": 3,
+                    "title": "Very gentle",
+                    "body": "Still found it hard to relax with a robot asking about my holiday plans."
+                }
+            ]
         },
         {
             "name": "Baby Sitter",
@@ -152,7 +409,28 @@
             "price": "$20/hour",
             "image": "baby-sitter.jpeg",
             "neuralink": false,
-            "editorsPick": true
+            "editorsPick": true,
+            "developer": "Nap Time Neural",
+            "version": "3.2.0",
+            "updated": "1 day ago",
+            "size": "2.5 TB",
+            "ageRating": "4+",
+            "reviewCount": 67502,
+            "whatsNew": "Bedtime stories now adapt to the child's age. Stopped reading the terms and conditions aloud.",
+            "reviews": [
+                {
+                    "author": "DateNightDeb",
+                    "rating": 5,
+                    "title": "An actual date night",
+                    "body": "Kids asleep by 7. Nothing touched in the wardrobe. The house was cleaner when we got back."
+                },
+                {
+                    "author": "Teenager_Tia",
+                    "rating": 1,
+                    "title": "Unfair",
+                    "body": "It won't let my friends in. It can't be bribed. It won't even argue."
+                }
+            ]
         },
         {
             "name": "Doctor - Personal",
@@ -162,7 +440,29 @@
             "rating": 4.9,
             "price": "$100/month",
             "image": "doctor-personal.jpeg",
-            "neuralink": true
+            "neuralink": true,
+            "developer": "House Call Neural",
+            "version": "5.0.3",
+            "updated": "3 days ago",
+            "size": "12.1 TB",
+            "ageRating": "12+",
+            "reviewCount": 28770,
+            "whatsNew": "Bedside manner improved. Now says 'hmm' 60% less when reading test results.",
+            "neuralSkill": "diagnose everyday ailments",
+            "reviews": [
+                {
+                    "author": "HypochondriacHarry",
+                    "rating": 5,
+                    "title": "Worth every penny",
+                    "body": "Checks me over every morning. Still says I'm fine. I remain suspicious."
+                },
+                {
+                    "author": "GranGladys",
+                    "rating": 5,
+                    "title": "Better than the waiting room",
+                    "body": "Proper diagnosis in my own kitchen, and it put the kettle on."
+                }
+            ]
         },
         {
             "name": "Doctor - Pro",
@@ -176,7 +476,28 @@
             "featured": {
                 "eyebrow": "For Business",
                 "headline": "Staff an entire hospital before lunch."
-            }
+            },
+            "developer": "MedEnsemble Systems",
+            "version": "9.4.0",
+            "updated": "1 day ago",
+            "size": "48 TB",
+            "ageRating": "18+",
+            "reviewCount": 1204,
+            "whatsNew": "Added cardiothoracic and paediatric sub-models. Handwriting remains illegible for authenticity.",
+            "reviews": [
+                {
+                    "author": "StMarysAdmin",
+                    "rating": 5,
+                    "title": "Waiting lists: gone",
+                    "body": "Twelve Optimii covered the night shift. They also reorganised the stationery cupboard."
+                },
+                {
+                    "author": "Dr_Human_Actual",
+                    "rating": 3,
+                    "title": "Impressive. Concerning.",
+                    "body": "It did my ward round, wrote my notes and asked if I'd considered a career change."
+                }
+            ]
         },
         {
             "name": "Archaeologist",
@@ -188,7 +509,29 @@
             "accessories": "Hat, whip, shovel",
             "image": "archaeologist.jpeg",
             "neuralink": true,
-            "editorsPick": true
+            "editorsPick": true,
+            "developer": "Fedora Field Systems",
+            "version": "1.3.0",
+            "updated": "2 weeks ago",
+            "size": "2.0 TB",
+            "ageRating": "12+",
+            "reviewCount": 5530,
+            "whatsNew": "Whip now optional. Stopped labelling garden gnomes as 'Roman'.",
+            "neuralSkill": "identify Roman pottery at a glance",
+            "reviews": [
+                {
+                    "author": "GardenerGeoff",
+                    "rating": 3,
+                    "title": "Found a coin",
+                    "body": "Also dug up the entire lawn, the patio, and next door's patio."
+                },
+                {
+                    "author": "HistoryBuffHelen",
+                    "rating": 4,
+                    "title": "Great fun",
+                    "body": "Insists everything 'belongs in a museum', including my husband's shed."
+                }
+            ]
         }
     ]
 }

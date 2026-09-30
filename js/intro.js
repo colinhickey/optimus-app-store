@@ -1,7 +1,6 @@
 // Scroll-scrubbed intro: push in on Optimus, pass through the black visor,
 // fly into a neural network, then hand off to the store.
 import { appsPromise } from "./data.js";
-import { createBrain } from "./brain.js";
 
 // Visor geometry is measured as fractions of the image (centre x/y, width/height).
 // maxZoom is capped by image resolution so the photo never visibly pixelates;
@@ -40,7 +39,7 @@ const seg = (p, start, end) => clamp((p - start) / (end - start));
 // Rises over [a, b], holds, falls over [c, d].
 const bell = (p, a, b, c, d) => seg(p, a, b) * (1 - seg(p, c, d));
 
-export function initIntro() {
+export function initIntro(brain) {
   const intro = document.getElementById("intro");
   const stage = intro.querySelector(".intro-stage");
   const hero = document.getElementById("hero");
@@ -61,7 +60,6 @@ export function initIntro() {
   const skip = document.getElementById("skip-intro");
   const header = document.getElementById("header");
   const logo = document.getElementById("logo");
-  const brain = createBrain(document.getElementById("brain"));
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const source = HERO_SOURCES.find((s) => !s.media || matchMedia(s.media).matches);

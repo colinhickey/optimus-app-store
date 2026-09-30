@@ -1,6 +1,9 @@
-import { appsPromise } from "./data.js";
-
-const neuralinkSVG = `<svg class="neuralink-icon" viewBox="0 0 56 35" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M30.8777 22.4886H0.705078L22.5011 2.28693C24.3585 0.565492 27.0293 -0.000275522 29.47 0.809903C31.9102 1.62058 33.6439 3.6498 33.994 6.10498L37.476 30.5019C37.5803 31.2306 38.0767 31.8049 38.8036 32.0367C39.5305 32.2696 40.2868 32.0946 40.8255 31.572L50.1712 22.4886H39.4676L39.1096 20.2688H55.7051L42.4717 33.131C41.6499 33.9302 40.5593 34.3566 39.4367 34.3566C38.9823 34.3566 38.5221 34.2862 38.073 34.1429C36.5143 33.6455 35.4074 32.3656 35.1842 30.8031L31.7021 6.40672C31.4673 4.75921 30.3499 3.45166 28.7127 2.90802C27.0759 2.36337 25.3548 2.72899 24.108 3.88365L6.42923 20.2688H30.5522L30.8777 22.4886Z"></path></svg>`;
+import { appFromHash, appsPromise } from "./data.js";
+import { createDetail } from "./detail.js";
+import { initNeuralOverlay } from "./install.js";
+import { library } from "./library.js";
+import { initLibraryPanel } from "./library-panel.js";
+import { escapeHTML, neuralinkSVG, priceLabel } from "./ui.js";
 
 const NEURALINK_FILTER = "Neuralink";
 
@@ -47,17 +50,12 @@ const SORTS = {
   name: (a, b) => a.name.localeCompare(b.name),
 };
 
-const escapeHTML = (value = "") =>
-  String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-
 // "$50k/month" -> 50000. Billing period is ignored; good enough for sorting.
 function priceValue(price) {
   const match = /\$([\d.]+)(k)?/i.exec(price);
   if (!match) return 0;
   return parseFloat(match[1]) * (match[2] ? 1000 : 1);
 }
-
-const priceLabel = (price) => (/free/i.test(price) ? "Get" : price);
 
 function cardHTML(app) {
   return `
@@ -164,7 +162,7 @@ function enableTilt(root) {
   });
 }
 
-export function initStore() {
+export function initStore(brain) {
   const store = document.getElementById("store");
   const todayTrack = document.getElementById("today-track");
   const todayDots = document.getElementById("today-dots");
@@ -182,85 +180,9 @@ export function initStore() {
   const resultsEmpty = document.getElementById("results-empty");
   const clearFilters = document.getElementById("clear-filters");
 
-  const modal = document.getElementById('modal');
-  const closeModalButton = document.getElementById('close-modal');
-  const closeModalMobile = document.getElementById('close-modal-mobile');
-  const modalImage = document.getElementById('modal-image');
-  const modalName = document.getElementById('modal-name');
-  const modalSubtitle = document.getElementById('modal-subtitle');
-  const modalDescription = document.getElementById('modal-description');
-  const modalCategory = document.getElementById('modal-category');
-  const modalRating = document.getElementById('modal-rating');
-  const modalPrice = document.getElementById('modal-price');
-  const modalAccessories = document.getElementById('modal-accessories');
-  const modalOptimusButton = document.getElementById('optimus-button');
-  const modalNeuralinkButton = document.getElementById('neuralink-button');
-  const neuralinkOverlay = document.getElementById('neuralink-overlay');
-  const neuralinkAnimation = document.getElementById('neuralink-animation');
-  const installMessage = document.getElementById('neuralink-install-message');
-
   const filters = { query: "", category: "All", sort: "featured" };
   let apps = [];
-  let lastFocus = null;
-
-  function openModal(app) {
-    lastFocus = document.activeElement;
-    modalImage.src = `images/${app.image}`;
-    modalName.textContent = app.name;
-    modalSubtitle.textContent = app.subtitle;
-    modalDescription.textContent = app.description;
-    modalCategory.textContent = app.category;
-    modalRating.textContent = `${app.rating} ⭐`;
-    modalPrice.textContent = app.price;
-    modalAccessories.textContent = `Accessories: ${app?.accessories ?? 'None'}`;
-    modalNeuralinkButton.classList.toggle('hidden', !app.neuralink);
-    modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-    closeModalButton.focus();
-  }
-
-  function closeModal() {
-    modal.classList.add('hidden');
-    document.body.classList.remove('modal-open');
-    lastFocus?.focus({ preventScroll: true });
-  }
-
-  function fireConfetti(event) {
-    const x = event.clientX / window.innerWidth;
-    const y = event.clientY / window.innerHeight;
-
-    confetti({
-      particleCount: 100,
-      startVelocity: 30,
-      spread: 360,
-      origin: { x, y },
-      zIndex: 20000
-    });
-  }
-
-  function startNeuralinkAnimation() {
-    neuralinkOverlay.classList.remove('hidden');
-    neuralinkOverlay.classList.add('show');
-    installMessage.classList.remove('hidden');
-    installMessage.classList.add('show');
-
-    // Create glowing circles
-    for (let i = 0; i < 5; i++) {
-      const circle = document.createElement('div');
-      circle.className = 'glowing-circle';
-      circle.style.animationDelay = `${i * 0.5}s`;
-      neuralinkAnimation.appendChild(circle);
-    }
-
-    // Hide the overlay and remove the glowing circles after 4 seconds
-    setTimeout(() => {
-      neuralinkOverlay.classList.remove('show');
-      neuralinkOverlay.classList.add('hidden');
-      neuralinkAnimation.innerHTML = '';
-      installMessage.classList.remove('show');
-      installMessage.classList.add('hidden');
-    }, 4000);
-  }
+  let detail;
 
   function renderToday() {
     document.getElementById("today-date").textContent = new Date()
@@ -343,6 +265,7 @@ export function initStore() {
     resultsCount.textContent = `${list.length} ${list.length === 1 ? "skill" : "skills"}`;
     resultsGrid.innerHTML = list.map(cardHTML).join("");
     resultsEmpty.hidden = list.length > 0;
+    refreshPills();
   }
 
   // Once the toolbar is stuck, keep results starting just beneath it rather than leaving the viewer mid-page.
@@ -378,26 +301,34 @@ export function initStore() {
 
   store.addEventListener("click", (event) => {
     const target = event.target.closest("[data-id]");
-    if (target) openModal(apps[target.dataset.id]);
+    if (target) detail.open(apps[target.dataset.id], { from: target });
   });
   enableTilt(store);
 
+  // Price pills read "Installed" once a skill is on the robot.
+  function refreshPills() {
+    store.querySelectorAll("[data-id]").forEach((el) => {
+      const app = apps[el.dataset.id];
+      const pill = el.querySelector(".price-pill");
+      const installed = library.isInstalled(app.slug);
+      pill.textContent = installed ? "Installed" : priceLabel(app.price);
+      pill.classList.toggle("installed", installed);
+    });
+  }
+
   appsPromise.then((data) => {
-    apps = data.map((app, id) => ({ ...app, id }));
+    apps = data;
+    detail = createDetail({ apps, brain });
+    initLibraryPanel({ apps, openApp: (app) => detail.open(app) });
+    initNeuralOverlay();
     renderToday();
     renderChips();
     renderShelves();
     update();
-  });
+    refreshPills();
+    library.subscribe(refreshPills);
 
-  modalOptimusButton.addEventListener('click', fireConfetti);
-  modalNeuralinkButton.addEventListener('click', startNeuralinkAnimation);
-  closeModalButton.addEventListener('click', closeModal);
-  closeModalMobile.addEventListener('click', closeModal);
-  modal.addEventListener('click', (event) => {
-    if (event.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    const linked = appFromHash(apps);
+    if (linked) detail.open(linked, { push: false });
   });
 }
